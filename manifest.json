@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "ShindenFix",
+  "version": "0.6.1",
+  "description": "Szerszy layout (ultrawide) i czyszczenie reklam na shinden.pl",
+  "minimum_chrome_version": "111",
+  "permissions": ["storage", "declarativeNetRequest"],
+  "host_permissions": ["*://*.shinden.pl/*"],
+  "action": {
+    "default_title": "ShindenFix",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.shinden.pl/*"],
+      "js": ["src/config.js", "src/content.js"],
+      "css": ["src/base.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": ["*://*.shinden.pl/*"],
+      "js": ["src/gate-main.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ads",
+        "enabled": false,
+        "path": "src/rules/ads.json"
+      },
+      {
+        "id": "adshield",
+        "enabled": true,
+        "path": "src/rules/adshield.json"
+      }
+    ]
+  }
+}

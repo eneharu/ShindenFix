@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||html-load.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "other", "stylesheet", "font", "ping", "object", "websocket"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||css-load.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "other", "stylesheet", "font", "ping", "object", "websocket"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||js-load.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "other", "stylesheet", "font", "ping", "object", "websocket"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||content-loader.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "other", "stylesheet", "font", "ping", "object", "websocket"]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||fuel.norexceptdrug.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "other", "stylesheet", "font", "ping", "object", "websocket"]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||error-report.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "other", "stylesheet", "font", "ping", "object", "websocket"]
+    }
+  },
+  {
+    "id": 7,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "/app.js",
+      "requestDomains": ["cloudfront.net"],
+      "initiatorDomains": ["shinden.pl"],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "other"]
+    }
+  },
+  {
+    "id": 8,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||d2w3kkzkbwx7b4.cloudfront.net^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "other", "stylesheet", "font", "ping", "object", "websocket"]
+    }
+  }
+]

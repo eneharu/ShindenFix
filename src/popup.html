@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShindenFix</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="head">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">ShindenFix</span>
+    </div>
+    <div class="head-right">
+      <span class="version">0.6.1</span>
+      <button id="reloadExt" class="icon-btn" type="button" title="Przeładuj wtyczkę i odśwież karty Shindena">↻</button>
+    </div>
+  </header>
+
+  <div id="conn" class="conn">Sprawdzam połączenie ze stroną…</div>
+
+  <main class="content">
+    <section class="card card--master">
+      <label class="row">
+        <span class="label">
+          <b>Włączona</b>
+          <small>Cała wtyczka</small>
+        </span>
+        <input type="checkbox" id="enabled" class="switch">
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Ultrawide</h2>
+
+      <label class="row">
+        <span class="label">
+          <b>Szerszy layout</b>
+          <small>Znosi limit 1320 px</small>
+        </span>
+        <input type="checkbox" id="wide" class="switch">
+      </label>
+
+      <div class="sub" id="widthBox">
+        <div class="row-between">
+          <span>Szerokość treści</span>
+          <output id="widthValue">2000 px</output>
+        </div>
+        <input type="range" id="width" min="1320" max="3440" step="20">
+        <label class="row row--tight">
+          <span class="label"><b>Pełna szerokość</b></span>
+          <input type="checkbox" id="fullWidth" class="switch">
+        </label>
+      </div>
+
+      <label class="row">
+        <span class="label">
+          <b>Feed w 2 kolumnach</b>
+          <small>Strona główna, okno ≥ 1500 px</small>
+        </span>
+        <input type="checkbox" id="feedColumns" class="switch">
+      </label>
+
+      <label class="row">
+        <span class="label">
+          <b>Czytelny tekst</b>
+          <small>Ogranicza długość linii w newsach i opisach</small>
+        </span>
+        <input type="checkbox" id="readableText" class="switch">
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Wygląd</h2>
+
+      <div class="bg-row">
+        <button id="pickBg" class="btn" type="button">Wybierz tło…</button>
+        <button id="clearBg" class="btn btn--ghost" type="button">Usuń</button>
+        <input type="file" id="bgFile" accept="image/*" hidden>
+      </div>
+
+      <div id="bgPreview" class="bg-preview" hidden>
+        <img id="bgPreviewImg" alt="Podgląd tła">
+      </div>
+
+      <div class="bg-hint">
+        <span>Obraz zapisuje się lokalnie.</span>
+        <button id="openTab" class="mini-btn" type="button">Otwórz panel w karcie</button>
+      </div>
+
+      <div class="sub" id="blurBox">
+        <div class="row-between">
+          <span>Rozmycie tła</span>
+          <output id="blurValue">8 px</output>
+        </div>
+        <input type="range" id="bgBlur" min="0" max="40" step="1">
+      </div>
+
+      <div class="row">
+        <span class="label">
+          <b>Kolor akcentu</b>
+          <small>Przyciski, linki i zaznaczenia</small>
+        </span>
+        <span class="accent-wrap">
+          <input type="color" id="accent" value="#bd77fa">
+          <button id="accentReset" class="mini-btn" type="button" title="Przywróć domyślny fiolet">Domyślny</button>
+        </span>
+      </div>
+
+      <label class="row">
+        <span class="label">
+          <b>Kwadratowe rogi</b>
+          <small>Zamienia zaokrąglenia na ostre kąty</small>
+        </span>
+        <input type="checkbox" id="squareCorners" class="switch">
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Reklamy</h2>
+
+      <label class="row">
+        <span class="label">
+          <b>Usuwaj reklamy</b>
+          <small>Sloty, autopromocja, resztki sieci</small>
+        </span>
+        <input type="checkbox" id="ads" class="switch">
+      </label>
+
+      <label class="row">
+        <span class="label">
+          <b>Usuwaj notki o reklamach</b>
+          <small>„Na tej stronie jest tylko jedna…”</small>
+        </span>
+        <input type="checkbox" id="adNotes" class="switch">
+      </label>
+
+      <label class="row">
+        <span class="label">
+          <b>Blokuj sieci reklamowe</b>
+          <small>Wymaga odświeżenia strony</small>
+        </span>
+        <input type="checkbox" id="blockNetworks" class="switch">
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Własne usuwanie</h2>
+
+      <label class="row">
+        <span class="label">
+          <b>Usuwaj dodatkowe elementy</b>
+          <small>Selektory CSS z pola poniżej</small>
+        </span>
+        <input type="checkbox" id="extraCleanup" class="switch">
+      </label>
+
+      <textarea id="extraSelectors" spellcheck="false" placeholder=".klasa-do-usuniecia&#10;#id element&#10;div[data-cos='x']"></textarea>
+      <p class="hint">Jeden selektor CSS na linię. Elementy są usuwane z DOM na każdej podstronie.</p>
+    </section>
+
+    <section class="card">
+      <label class="row">
+        <span class="label">
+          <b>Tryb debug</b>
+          <small>Logi w konsoli (F12)</small>
+        </span>
+        <input type="checkbox" id="debug" class="switch">
+      </label>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span id="status">Ustawienia zapisują się automatycznie</span>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

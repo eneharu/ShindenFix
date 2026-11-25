@@ -1,0 +1,192 @@
+/* ==========================================================================
+   ShindenFix — bazowy layout
+   Działa tylko, gdy na <html> jest klasa .sf-wide (ustawiana przez content.js)
+   ========================================================================== */
+
+/* --- główny kontener ------------------------------------------------------ */
+html.sf-wide .l-global-width,
+html.sf-wide .l-footer,
+html.sf-wide .top-bar {
+  max-width: var(--sf-max-w, 100%) !important;
+  width: 100% !important;
+}
+
+/* strona główna / serie / odcinki: baner nie może zostać "cienkim paskiem" */
+html.sf-wide .sh-tp--baner {
+  --sh-tp-ban-h: clamp(200px, 18vw, 420px);
+}
+
+/* powiększenie podglądu okładek */
+html.sf-wide #la,
+html.sf-wide #lm {
+  max-width: min(96vw, 1600px);
+}
+
+/* ==========================================================================
+   Strona główna — feed w kolumnach (na podstawie szerokości feedu, nie okna)
+   ========================================================================== */
+html.sf-wide.sf-feed-cols .home-feed {
+  min-width: 0;
+}
+
+@container sh-feed (min-width: 1500px) {
+  html.sf-wide.sf-feed-cols #sh-feed-panel > [class*="_list_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container sh-feed (min-width: 2600px) {
+  html.sf-wide.sf-feed-cols #sh-feed-panel > [class*="_list_"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* duży slider newsów nie może zjeść całego ekranu na ultrawide */
+@media (min-width: 2400px) {
+  html.sf-wide .home-feed > .sh-feed-ph > [class*="_feed_"] > section > [class*="_slider_"] article {
+    aspect-ratio: 4 / 1 !important;
+  }
+}
+
+/* ==========================================================================
+   Długie teksty — czytelna długość linii przy szerokim layoucie
+   ========================================================================== */
+html.sf-wide.sf-readable #tresc article :is(p, li) {
+  max-width: 100ch;
+}
+
+/* widok pojedynczego newsa — całość (tytuł + treść) w czytelnej kolumnie */
+html.sf-wide.sf-readable section.data-view-article {
+  max-width: 1100px;
+  margin-inline: auto !important;
+}
+
+/* opisy serii/odcinków — połowa szerokości, tekst do lewej, zdanie na linię */
+@media (min-width: 1500px) {
+  html.sf-wide.sf-readable #tresc .sh-tp-section:has(#description) {
+    max-width: min(50%, 1200px);
+  }
+
+  html.sf-wide.sf-readable #tresc .sh-d--opis :is(p, li) {
+    max-width: none !important;
+  }
+}
+
+html.sf-wide.sf-readable #tresc .sh-d--opis,
+html.sf-wide.sf-readable #tresc .sh-d--opis :is(p, li, .sf-sentence) {
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* każde zdanie jako osobny blok (JS oznacza zdania klasą .sf-sentence) */
+html.sf-wide.sf-readable #tresc .sh-d--opis .sf-sentence {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+html.sf-wide.sf-readable #tresc .sh-d--opis .sf-sentence:last-child {
+  margin-bottom: 0;
+}
+
+/* separator między opisem a tagami (kolor = akcent) */
+html.sf-on #tresc .sh-tp-section:has(#description) > .sh-tp-tags {
+  border-top: 1px solid var(--sh-accent);
+  margin-top: 14px;
+  padding-top: 14px;
+}
+
+/* separator między grupami tagów (Sci-Fi | Kosmos) */
+html.sf-accent .sh-tp-tags,
+html.sf-accent .sh-tp-taggroup {
+  --sh-divider: color-mix(in srgb, var(--sh-accent) 55%, var(--sh-border));
+}
+
+/* linie i separatory w treści, stopce i popoverach w kolorze akcentu */
+html.sf-accent #tresc,
+html.sf-accent .l-footer.footer,
+html.sf-accent [popover] {
+  --sh-divider: color-mix(in srgb, var(--sh-accent) 55%, var(--sh-border));
+}
+
+/* pionowa kreska w wyszukiwarce między inputem a "Wszystko" */
+html.sf-accent .np-szukaj select {
+  border-left-color: var(--sh-accent) !important;
+}
+
+/* opcjonalne kwadratowe rogi wszystkich elementów */
+html.sf-square *,
+html.sf-square *::before,
+html.sf-square *::after {
+  border-radius: 0 !important;
+}
+
+/* ...ale zdjęcia profilowe / awatary zostają okrągłe */
+html.sf-square :is(
+  [class*="avatar"],
+  [class*="Avatar"],
+  img[src*="/res/avatars/72x72/"],
+  img[src*="/res/avatars/100x100/"],
+  img[src*="/res/avatars/200x200/"],
+  img[src*="/res/avatars/genuine/"],
+  img[src*="/placeholders/user-"]
+) {
+  border-radius: 50% !important;
+}
+
+/* ...a licznik powiadomień / wiadomości zostaje pastylką */
+html.sf-square .np-licznik {
+  border-radius: 999px !important;
+}
+
+/* ==========================================================================
+   Własne tło (stałe, niezależne od scrolla)
+   ========================================================================== */
+html.sf-bg body::before {
+  content: "";
+  position: fixed;
+  inset: -60px;
+  z-index: -1;
+  background-image: var(--sf-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(var(--sf-bg-blur, 0px));
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+html.sf-bg,
+html.sf-bg body {
+  background-color: transparent !important;
+}
+
+html.sf-bg .l-container-primary {
+  background-color: color-mix(in srgb, var(--sh-surface) 84%, transparent) !important;
+}
+
+html.sf-bg .l-footer.footer {
+  background-color: color-mix(in srgb, var(--sh-bg) 72%, transparent) !important;
+}
+
+/* ==========================================================================
+   Drobne poprawki przy pełnej szerokości
+   ========================================================================== */
+html.sf-wide .np-in {
+  padding-inline: clamp(16px, 1.5vw, 40px);
+}
+
+@media (min-width: 1500px) {
+  html.sf-wide .l-footer.footer > .l-global-width {
+    padding-inline: clamp(0px, 1vw, 24px);
+  }
+}
+
+/* ==========================================================================
+   Ściana Ad-Shield ("Zezwól na reklamy w tej witrynie")
+   Ramka jest blokowana sieciowo, a gdyby zdążyła się wstawić — chowamy ją.
+   ========================================================================== */
+iframe[src*="error-report.com"],
+iframe[src*="html-load.com"],
+iframe[src*="css-load.com"] {
+  display: none !important;
+}

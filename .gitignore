@@ -1,0 +1,7 @@
+# Artefakty generowane przez Chromium przy ładowaniu wtyczki
+_metadata/
+
+# Paczki i klucze
+*.zip
+*.crx
+*.pem
