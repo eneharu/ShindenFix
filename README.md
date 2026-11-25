@@ -31,9 +31,9 @@ Wtyczka do przeglądarek Chromium (Chrome, Edge, Brave, Opera), która poprawia 
 - **Kwadratowe rogi** - ostre kąty kart, przycisków, tagów i pól; zdjęcia profilowe oraz licznik powiadomień pozostają okrągłe.
 
 ### Reklamy, bramki i ściany
-- **Usuwaj reklamy** - sloty reklamowe, autopromocja shindena, „wyskakujące” reklamy, resztki sieci reklamowych.
-- **Usuwaj notki o reklamach** - komunikaty typu „Na tej stronie jest tylko jedna nasza reklama...”.
-- **Blokuj sieci reklamowe** - reguły sieciowe dla Criteo, Społeczności, Google Ads i innych (wymaga odświeżenia strony).
+- **Usunięte reklamy** - sloty reklamowe, autopromocja shindena, „wyskakujące” reklamy, resztki sieci reklamowych.
+- **Usunięte notki o reklamach** - komunikaty typu „Na tej stronie jest tylko jedna nasza reklama...”.
+- **Blokada sieci reklamowych** - reguły sieciowe dla Criteo, Społeczności, Google Ads i innych (wymaga odświeżenia strony).
 - Automatyczne **„Pokaż playery”** - wtyczka sama zaznacza wymaganą zgodę i klika bramkę anty-adblock przed playerami.
 - **Blokada ściany Ad-Shield** („Zezwól na reklamy w tej witrynie”, `html-load.com` / `error-report.com`) - wtyczka blokuje jej pliki, przekierowanie i czyszczenie strony. Ściana nie ma szans się pokazać.
 - Usuwa ramkę „Nie otwieraj plików pobranych...”, rozmazane tło nagłówka anime, kafelek „Wbij na Discord” oraz komunikaty anty-adblock.
