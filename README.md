@@ -32,11 +32,11 @@ Wtyczka do przeglądarek Chromium (Chrome, Edge, Brave, Opera), która poprawia 
 
 ### Reklamy, bramki i ściany
 - **Usuwaj reklamy** - sloty reklamowe, autopromocja shindena, „wyskakujące” reklamy, resztki sieci reklamowych.
-- **Usuwaj notki o reklamach** - komunikaty typu „Na tej stronie jest tylko jedna nasza reklama…”.
+- **Usuwaj notki o reklamach** - komunikaty typu „Na tej stronie jest tylko jedna nasza reklama...”.
 - **Blokuj sieci reklamowe** - reguły sieciowe dla Criteo, Społeczności, Google Ads i innych (wymaga odświeżenia strony).
 - Automatyczne **„Pokaż playery”** - wtyczka sama zaznacza wymaganą zgodę i klika bramkę anty-adblock przed playerami.
 - **Blokada ściany Ad-Shield** („Zezwól na reklamy w tej witrynie”, `html-load.com` / `error-report.com`) - wtyczka blokuje jej pliki, przekierowanie i czyszczenie strony. Ściana nie ma szans się pokazać.
-- Usuwa ramkę „Nie otwieraj plików pobranych…”, rozmazane tło nagłówka anime, kafelek „Wbij na Discord” oraz komunikaty anty-adblock.
+- Usuwa ramkę „Nie otwieraj plików pobranych...”, rozmazane tło nagłówka anime, kafelek „Wbij na Discord” oraz komunikaty anty-adblock.
 - Obserwuje DOM (`MutationObserver`) i powtarza czyszczenie, więc reklamy nie wracają.
 
 ### Własne usuwanie
@@ -62,7 +62,7 @@ Ikona wtyczki pojawi się na pasku - kliknięcie otwiera panel ustawień.
 > **Dlaczego ZIP, a nie `.crx`?** Chrome i Brave blokują instalację plików `.crx` spoza sklepu (błąd `CRX_REQUIRED_PROOF_MISSING`). ZIP + „Załaduj rozpakowane” to jedyna pewna metoda instalacji poza sklepem.
 
 ### Aktualizacja
-Po podmianie plików na nowsze: `brave://extensions` (lub `chrome://extensions`) → **↻ Przeładuj** przy ShindenFix → odśwież stronę. Panel wtyczki pokazuje numer wersji i status „Aktywna · v…”.
+Po podmianie plików na nowsze: `brave://extensions` (lub `chrome://extensions`) → **↻ Przeładuj** przy ShindenFix → odśwież stronę. Panel wtyczki pokazuje numer wersji i status „Aktywna · v...”.
 
 ### Wymagania
 - Chromium **111+** (Chrome, Edge, Brave, Opera).

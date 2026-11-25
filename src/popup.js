@@ -292,7 +292,7 @@
       status("To nie jest plik obrazu", "warn");
       return;
     }
-    status("Przetwarzam obraz…");
+    status("Przetwarzam obraz...");
     try {
       const data = await imageToDataUrl(file);
       bgData = data;

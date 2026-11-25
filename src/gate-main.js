@@ -66,7 +66,7 @@
 
   document.addEventListener("sf:bypass-gate", () => bypass());
 
-  /* ---------- ściana Ad-Shield ("Zezwól na reklamy…") ---------- */
+  /* ---------- ściana Ad-Shield ("Zezwól na reklamy...") ---------- */
 
   /*
    * Ad-Shield (html-load.com / error-report.com) potrafi podmienić stronę na
@@ -91,7 +91,7 @@
 
   /*
    * Ad-Shield po zablokowaniu swojego skryptu sama uruchamia atrybut
-   * `onerror` z <script id="…" src="https://html-load.com/vendor.js">.
+   * `onerror` z <script id="..." src="https://html-load.com/vendor.js">.
    * Ten atrybut to właśnie cała ściana. Przechwytujemy błąd w fazie capture
    * (przed atrybutem onerror) i nie pozwalamy mu się wykonać.
    */
@@ -178,7 +178,7 @@
     }
   } catch { /* ignore */ }
 
-  /* okienko "Please allow ads…" nie ma się pokazywać */
+  /* okienko "Please allow ads..." nie ma się pokazywać */
   try {
     const originalConfirm = window.confirm;
     window.confirm = function (message) {
