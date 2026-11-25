@@ -4,6 +4,16 @@ Wtyczka do przeglądarek Chromium (Chrome, Edge, Brave, Opera), która poprawia 
 
 ![Menu wtyczki](docs/menu.png)
 
+### Przykładowe kompozycje
+
+Trzy przykłady wyglądu z własnym tłem — każdy to osobne ustawienie użytkownika (wtyczka nie dodaje żadnych obrazów od siebie).
+
+![Kompozycja 1](docs/showcase-1.jpg)
+
+![Kompozycja 2](docs/showcase-2.jpg)
+
+![Kompozycja 3](docs/showcase-3.jpg)
+
 ---
 
 ## Funkcje
