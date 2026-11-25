@@ -1,5 +1,5 @@
 /*
- * ShindenFix — konfiguracja
+ * ShindenFix - konfiguracja
  *
  * Ten plik jest jedynym miejscem, w którym trzeba grzebać przy dodawaniu
  * nowych rzeczy do usuwania. Wszystko poniżej działa na KAŻDEJ podstronie
@@ -32,7 +32,7 @@ globalThis.SF = {
    * Nazwy semantyczne z atrybutu data-sh-n na <html>.
    * Shinden nadaje klasom losowe/hashowane nazwy (np. "je9c86d"), ale trzyma
    * mapę "nazwa semantyczna -> hash" właśnie w data-sh-n. Dzięki temu nie
-   * hardkodujemy hashy — po każdej zmianie wersji strony czytamy je na nowo.
+   * hardkodujemy hashy - po każdej zmianie wersji strony czytamy je na nowo.
    */
   AD_SEMANTIC: [
     "takie-tam",         // uniwersalny slot reklamowy
@@ -101,7 +101,7 @@ globalThis.SF = {
     "img[src*='criteo']"
   ],
 
-  /* Linki "sponsorowane" shindena — ich rodzica traktujemy jako kreację reklamową */
+  /* Linki "sponsorowane" shindena - ich rodzica traktujemy jako kreację reklamową */
   SPONSORED_SELECTOR: "a[href^='/l/'][rel~='sponsored']",
 
   /* Dodatkowe reguły tekstowe: { text: RegExp, selector: string }

@@ -1,5 +1,5 @@
 /*
- * ShindenFix — helper w świecie strony (world: "MAIN").
+ * ShindenFix - helper w świecie strony (world: "MAIN").
  *
  * Bramka przed playerami sprawdza `event.nativeEvent.isTrusted`, więc zwykłe
  * .click() jest ignorowane. Wywołujemy handlery Reacta bezpośrednio,
@@ -53,7 +53,7 @@
       }
     }
 
-    /* po onChange React przerenderowuje bramkę — bierzemy ŚWIEŻE propsy,
+    /* po onChange React przerenderowuje bramkę - bierzemy ŚWIEŻE propsy,
        inaczej onClick widzi stare `checked=false` i pokazuje błąd */
     setTimeout(() => {
       const freshBtn = findGateButton() || btn;

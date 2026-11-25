@@ -1,5 +1,5 @@
 /*
- * ShindenFix — content script
+ * ShindenFix - content script
  * Wstrzykiwany na każdej podstronie shinden.pl (document_start).
  */
 (() => {
@@ -15,7 +15,7 @@
     try { return chrome.runtime.getManifest().version; } catch { return "?"; }
   })();
 
-  /* znacznik wersji widoczny w DOM i konsoli — łatwo sprawdzić, czy działa nowa wersja */
+  /* znacznik wersji widoczny w DOM i konsoli - łatwo sprawdzić, czy działa nowa wersja */
   root.setAttribute("data-sf-version", EXT_VERSION);
   console.info(`[ShindenFix] v${EXT_VERSION} aktywny na ${location.host}${location.pathname}`);
 
@@ -260,7 +260,7 @@
     /* stałe elementy strony (np. kafelek Discord) */
     for (const sel of C.REMOVE_SELECTORS || []) removeMatching(sel, counter);
 
-    /* reguły tekstowe — usuwamy najmniejszy pasujący element */
+    /* reguły tekstowe - usuwamy najmniejszy pasujący element */
     const textRules = Array.isArray(C.TEXT_RULES) ? C.TEXT_RULES : [];
     for (const rule of textRules) {
       if (!rule || !(rule.text instanceof RegExp) || !rule.selector) continue;
@@ -313,7 +313,7 @@
       document.dispatchEvent(new CustomEvent("sf:bypass-gate"));
     } catch { /* ignore */ }
 
-    /* awaryjnie zwykłe kliknięcia — tylko gdy helper nie jest dostępny */
+    /* awaryjnie zwykłe kliknięcia - tylko gdy helper nie jest dostępny */
     if (!root.hasAttribute("data-sf-gate-helper")) {
       const wrap = btn.parentElement;
       const checkbox = wrap ? wrap.querySelector("input[type='checkbox']") : null;
@@ -411,7 +411,7 @@
   }
 
   function applyAll() {
-    /* ustawienia mogły się zmienić — przebuduj cache */
+    /* ustawienia mogły się zmienić - przebuduj cache */
     adHideSelector = "";
     adRemoveSelector = "";
     noteSelector = "";
@@ -482,7 +482,7 @@
     });
     chrome.storage.onChanged.addListener(onStorageChanged);
   } catch {
-    /* brak API storage — działamy na ustawieniach domyślnych */
+    /* brak API storage - działamy na ustawieniach domyślnych */
   }
 
   /* ---------- start ---------- */

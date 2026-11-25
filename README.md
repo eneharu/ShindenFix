@@ -18,7 +18,7 @@ Wtyczka do przeglądarek Chromium (Chrome, Edge, Brave, Opera), która poprawia 
 
 ### Ultrawide i czytelność
 - **Szerszy layout** - zdejmuje limit szerokości 1320 px i wykorzystuje cały monitor.
-- **Szerokość treści** - suwak 1320–3440 px (domyślnie **2300 px**).
+- **Szerokość treści** - suwak 1320-3440 px (domyślnie **2300 px**).
 - **Pełna szerokość** - 100% okna, niezależnie od suwaka.
 - **Feed w kolumnach** - strona główna: 2 kolumny (feed ≥ 1500 px), 3 kolumny (feed ≥ 2600 px).
 - **Czytelny tekst** - ogranicza długość linii w newsach; opis anime ma połowę szerokości, tekst do lewej, a każde zdanie zaczyna się od nowej linii.
@@ -26,7 +26,7 @@ Wtyczka do przeglądarek Chromium (Chrome, Edge, Brave, Opera), która poprawia 
 
 ### Wygląd
 - **Własne tło** - PNG/JPG/WebP; obraz jest zmniejszany i zapisywany lokalnie. Tło jest przyklejone (`position: fixed`), więc nie przewija się razem ze stroną.
-- **Rozmycie tła** - suwak 0–40 px.
+- **Rozmycie tła** - suwak 0-40 px.
 - **Kolor akcentu** - własny kolor przycisków, linków, tagów, aktywnych narzędzi, linii komentarzy, wierszy odcinków, stopki i wyszukiwarki. „Domyślny” przywraca fiolet.
 - **Kwadratowe rogi** - ostre kąty kart, przycisków, tagów i pól; zdjęcia profilowe oraz licznik powiadomień pozostają okrągłe.
 
@@ -84,13 +84,13 @@ Po podmianie plików na nowsze: `brave://extensions` (lub `chrome://extensions`)
 manifest.json
 icons/
 src/
-  base.css            – layout ultrawide (ładowany przed DOM)
-  config.js           – ustawienia domyślne i listy selektorów
-  content.js          – layout, czyszczenie reklam, bramka, obserwacja DOM
-  gate-main.js        – helper w świecie strony (bramka + blokada ściany Ad-Shield)
-  popup.html/.css/.js – panel ustawień
-  rules/ads.json      – opcjonalna blokada sieci reklamowych (DNR)
-  rules/adshield.json – blokada infrastruktury Ad-Shield (DNR, zawsze aktywna)
+  base.css            - layout ultrawide (ładowany przed DOM)
+  config.js           - ustawienia domyślne i listy selektorów
+  content.js          - layout, czyszczenie reklam, bramka, obserwacja DOM
+  gate-main.js        - helper w świecie strony (bramka + blokada ściany Ad-Shield)
+  popup.html/.css/.js - panel ustawień
+  rules/ads.json      - opcjonalna blokada sieci reklamowych (DNR)
+  rules/adshield.json - blokada infrastruktury Ad-Shield (DNR, zawsze aktywna)
 ```
 
 **Wersja:** 0.6.1

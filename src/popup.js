@@ -1,4 +1,4 @@
-/* ShindenFix — logika popupu */
+/* ShindenFix - logika popupu */
 (() => {
   const C = globalThis.SF;
   const D = C.DEFAULTS;
@@ -39,7 +39,7 @@
   let statusTimer = null;
   let previewSrc = null;
 
-  /* wersja z manifestu — zawsze zgodna z tym, co realnie działa */
+  /* wersja z manifestu - zawsze zgodna z tym, co realnie działa */
   try {
     document.querySelector(".version").textContent = chrome.runtime.getManifest().version;
   } catch { /* ignore */ }
@@ -61,7 +61,7 @@
         }
         chrome.tabs.sendMessage(tab.id, { type: "sf:ping" }, (res) => {
           if (chrome.runtime.lastError || !res || !res.ok) {
-            setConn("Wtyczka nieaktywna na tej karcie — odśwież shinden.pl", "warn");
+            setConn("Wtyczka nieaktywna na tej karcie - odśwież shinden.pl", "warn");
             return;
           }
           setConn(`Aktywna · v${res.version}${res.enabled ? "" : " · wyłączona"}`, res.enabled ? "ok" : "warn");
@@ -331,7 +331,7 @@
 
   /* szybkie przeładowanie wtyczki po podmianie plików */
   $("reloadExt").addEventListener("click", () => {
-    setConn("Przeładowuję wtyczkę — potem odśwież stronę (Ctrl+Shift+R)", "ok");
+    setConn("Przeładowuję wtyczkę - potem odśwież stronę (Ctrl+Shift+R)", "ok");
     setTimeout(() => {
       try { chrome.runtime.reload(); } catch { /* ignore */ }
     }, 300);
